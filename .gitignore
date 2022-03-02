@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/AlkemyChallenge/.vs/AlkemyChallenge
+/AlkemyChallenge/bin/Debug/net6.0
+/Interfaces/bin/Debug/netstandard2.1

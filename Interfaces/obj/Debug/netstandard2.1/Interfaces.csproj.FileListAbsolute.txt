@@ -1,0 +1,10 @@
+D:\Code\AlkemyChallenge\Interfaces\bin\Debug\netstandard2.1\Interfaces.deps.json
+D:\Code\AlkemyChallenge\Interfaces\bin\Debug\netstandard2.1\Interfaces.dll
+D:\Code\AlkemyChallenge\Interfaces\bin\Debug\netstandard2.1\Interfaces.pdb
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.csproj.AssemblyReference.cache
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.AssemblyInfoInputs.cache
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.AssemblyInfo.cs
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.csproj.CoreCompileInputs.cache
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.dll
+D:\Code\AlkemyChallenge\Interfaces\obj\Debug\netstandard2.1\Interfaces.pdb
