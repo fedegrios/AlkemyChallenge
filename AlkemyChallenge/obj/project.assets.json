@@ -755,6 +755,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Infraestructure": "1.0.0",
           "Interfaces": "1.0.0"
         },
         "compile": {

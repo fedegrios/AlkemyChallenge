@@ -10,6 +10,8 @@ namespace Domain
 
         public int Age { get; set; }
 
+        public int Weight { get; set; }
+
         public string Story { get; set; }
 
         public List<CharacterMovie> CharacterMovies { get; set; }

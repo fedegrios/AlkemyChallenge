@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Interfaces
 {
@@ -6,7 +7,7 @@ namespace Interfaces
     {
         Task<CharacterDetailDto> Get(int id);
 
-        Task<CharacterDto> List(string name, int age, int movieId);
+        Task<List<CharacterDto>> List(string name, int age, int movieId);
 
         Task<int> Create(CharacterCreationDto dto);
 

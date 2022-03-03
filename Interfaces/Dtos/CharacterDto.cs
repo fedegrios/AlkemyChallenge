@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Interfaces
+﻿namespace Interfaces
 {
     public class CharacterDto : Dto
     {
@@ -11,9 +9,9 @@ namespace Interfaces
 
     public class CharacterCreationDto : CharacterDto
     {
-        public string Age { get; set; }
+        public int Age { get; set; }
 
-        public string Weight { get; set; }
+        public int Weight { get; set; }
 
         public string Story { get; set; }
     }

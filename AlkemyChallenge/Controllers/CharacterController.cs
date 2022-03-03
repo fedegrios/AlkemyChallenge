@@ -8,10 +8,12 @@ namespace AlkemyChallenge.Controllers
     public class CharacterController : Controller
     {
         private readonly ICharacterServices characterServices;
+        private readonly IWebHostEnvironment env;
 
-        public CharacterController(ICharacterServices characterServices)
+        public CharacterController(ICharacterServices characterServices, IWebHostEnvironment env)
         {
             this.characterServices = characterServices;
+            this.env = env;
         }
 
         [HttpGet("{id:int}")]
@@ -29,7 +31,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<CharacterDto>> List(string name ="", int age =0, int movieId =0)
+        public async Task<ActionResult<List<CharacterDto>>> List(string name ="", int age =0, int movieId =0)
         {
             try
             {
@@ -56,13 +58,28 @@ namespace AlkemyChallenge.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("{id:int}")]
         [Route("UpdateImage")]
-        public async Task<ActionResult<string>> UpdateImage([FromForm] ImageUpdateDto dto)
+        public async Task<ActionResult<string>> UpdateImage([FromForm] IFormFile file, int id)
         {
             try
             {
-                return await characterServices.UpdateImage(dto);
+                var updateImageDto = new ImageUpdateDto();
+
+                updateImageDto.Id = id;
+                updateImageDto.Extension = Path.GetExtension(file.FileName);
+                updateImageDto.WebRootPath = env.WebRootPath;
+
+                if (file != null)
+                { 
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await file.CopyToAsync(memoryStream);
+                        updateImageDto.Image = memoryStream.ToArray();
+                    }
+                }
+
+                return await characterServices.UpdateImage(updateImageDto);
             }
             catch (Exception e)
             {

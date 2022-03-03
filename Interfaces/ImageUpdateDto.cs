@@ -4,6 +4,10 @@ namespace Interfaces
 {
     public class ImageUpdateDto : Dto
     {
-        public IFormFile Image { get; set; }
+        public byte[] Image { get; set; }
+
+        public string Extension { get; set; }
+
+        public string WebRootPath { get; set; }
     }
 }

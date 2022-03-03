@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using Infraestructure;
+using Interfaces;
 using Services;
 
 namespace AlkemyChallenge
@@ -7,7 +8,10 @@ namespace AlkemyChallenge
     {
         public void ConfigIoC(IServiceCollection services)
         {
+            services.AddSingleton<DataContext>();
+
             services.AddTransient<IStorageServices, LocalStorageServices>();
+
         }
     }
 }
