@@ -749,6 +749,20 @@
         "runtime": {
           "bin/placeholder/Interfaces.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Interfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -2129,6 +2143,11 @@
       "type": "project",
       "path": "../Interfaces/Interfaces.csproj",
       "msbuildProject": "../Interfaces/Interfaces.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2136,6 +2155,7 @@
       "Infraestructure >= 1.0.0",
       "Interfaces >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2176,6 +2196,9 @@
             },
             "D:\\Code\\AlkemyChallenge\\Interfaces\\Interfaces.csproj": {
               "projectPath": "D:\\Code\\AlkemyChallenge\\Interfaces\\Interfaces.csproj"
+            },
+            "D:\\Code\\AlkemyChallenge\\Services\\Services.csproj": {
+              "projectPath": "D:\\Code\\AlkemyChallenge\\Services\\Services.csproj"
             }
           }
         }

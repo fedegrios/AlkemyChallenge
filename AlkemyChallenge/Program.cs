@@ -1,11 +1,18 @@
 using System.Text.Json.Serialization;
+using AlkemyChallenge;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var startup = new Startup();
 
 // Add services to the container.
 
 builder.Services.AddControllers()
     .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+startup.ConfigIoC(builder.Services);
+
+builder.Services.AddHttpContextAccessor();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -21,6 +28,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthorization();
 
