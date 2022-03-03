@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Domain
+﻿namespace Domain
 {
     public class CharacterMovie
     {
@@ -8,8 +6,8 @@ namespace Domain
 
         public int MovieId { get; set; }
 
-        public List<Character> Characters { get; set; }
+        public Character Character { get; set; }
 
-        public List<Movie> Movies { get; set; }
+        public Movie Movie { get; set; }
     }
 }

@@ -22,13 +22,7 @@ namespace Services
         {
             try
             {
-                var id = dataContext.Characters.Any()
-                    ? dataContext.Characters.Max(x => x.Id) +1
-                    : 1;
-
                 var newCharacter = dto.MapToCharacter();
-
-                //newCharacter.Id = id;
 
                 dataContext.Characters.Add(newCharacter);
 
@@ -45,34 +39,75 @@ namespace Services
 
         public async Task<bool> Delete(int id)
         {
-            if (!dataContext.Characters.Any(x => x.Id == id))
+            try
+            {
+                if (!dataContext.Characters.Any(x => x.Id == id))
+                    return false;
+
+                var character = dataContext.Characters.FirstOrDefault(x => x.Id == id);
+
+                if (character == null)
+                    return false;
+
+                character.Deleted = true;
+
+                await dataContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"CharacterServices.Delete: {e.Message}");
                 return false;
+            }
+        }
 
-            var character = dataContext.Characters.FirstOrDefault(x => x.Id == id);
+        public async Task<bool> Update(CharacterCreationDto dto)
+        {
+            try
+            {
+                var character = await dataContext.Characters.FirstOrDefaultAsync(x => x.Id == dto.Id);
 
-            if (character == null)
-                return false;
+                if (character == null)
+                    return false;
 
-            character.Deleted = true;
+                character.Name = dto.Name;
+                character.Age = dto.Age;
+                character.Weight = dto.Weight;
+                character.Story = dto.Story;
 
-            await dataContext.SaveChangesAsync();
+                await dataContext.SaveChangesAsync();
 
-            return true;
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"CharacterServices.Update: {e.Message}");
+                throw;
+            }
         }
 
         public async Task<CharacterDetailDto> Get(int id)
         {
-            if (!dataContext.Characters.Any(x => x.Id == id))
-                return null;
+            try
+            {
+                if (!dataContext.Characters.Any(x => x.Id == id))
+                    return null;
 
-            var character = dataContext.Characters
-                .AsNoTracking()
-                .FirstOrDefault(x => x.Id == id);
+                var character = dataContext.Characters
+                    .AsNoTracking()
+                    .FirstOrDefault(x => x.Id == id);
 
-            if (character == null)
-                return null;
+                if (character == null)
+                    return null;
 
-            return character.MapToCharacterDetailDto();
+                return character.MapToCharacterDetailDto();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"CharacterServices.Get: {e.Message}");
+                throw;
+            }
         }
 
         public async Task<List<CharacterDto>> List(string name, int age, int movieId)
@@ -104,23 +139,6 @@ namespace Services
                 Console.WriteLine($@"CharacterServices.List: {e.Message}");
                 throw;
             }
-        }
-
-        public async Task<bool> Update(CharacterCreationDto dto)
-        {
-            var character = await dataContext.Characters.FirstOrDefaultAsync(x => x.Id == dto.Id);
-
-            if (character == null)
-                return false;
-
-            character.Name = dto.Name;
-            character.Age = dto.Age;
-            character.Weight = dto.Weight;
-            character.Story = dto.Story;
-
-            await dataContext.SaveChangesAsync();
-
-            return true;
         }
 
         public async Task<string> UpdateImage(ImageUpdateDto dto)

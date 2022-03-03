@@ -12,6 +12,7 @@ namespace AlkemyChallenge
 
             services.AddTransient<IStorageServices, LocalStorageServices>();
             services.AddTransient<ICharacterServices, CharacterServices>();
+            services.AddTransient<IMovieServices, MovieServices>();
 
         }
     }

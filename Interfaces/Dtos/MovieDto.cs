@@ -23,10 +23,10 @@ namespace Interfaces
 
     public class MovieDetailDto : MovieDto
     {
-        public List<CharacterDto> CharactersMuvie { get; set; }
-            = new List<CharacterDto>();
+        public int Score { get; set; }
 
-        public List<string> Genres { get; set; }
-            =new List<string>();
+        public List<CharacterDto> Characters { get; set; }
+
+        public List<GenreDto> Genres { get; set; }
     }
 }

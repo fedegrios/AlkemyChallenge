@@ -29,11 +29,16 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<MovieDetailDto>> List(int id)
+        public async Task<ActionResult<MovieDetailDto>> Get(int id)
         {
             try
             {
-                return await movieServices.Get(id);
+                var movie = await movieServices.Get(id);
+
+                if (movie == null)
+                    return BadRequest(@"No se pudo encontrar la película/serie");
+
+                return Ok(movie);
             }
             catch (Exception e)
             {
@@ -62,7 +67,12 @@ namespace AlkemyChallenge.Controllers
         {
             try
             {
-                return await movieServices.Update(dto);
+                var result = await movieServices.Update(dto);
+
+                if(!result)
+                    return BadRequest("No se pudo actualizar la película/serie");
+
+                return Ok();
             }
             catch (Exception e)
             {

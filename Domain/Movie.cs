@@ -13,8 +13,8 @@ namespace Domain
 
         public int Score { get; set; }
 
-        public List<CharacterMovie> CharactersMuvie { get; set; }
+        public List<CharacterMovie> CharactersMovie { get; set; }
 
-        public List<GenreMovie> GenresMuvie { get; set; }
+        public List<GenreMovie> GenresMovie { get; set; }
     }
 }

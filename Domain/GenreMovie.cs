@@ -8,8 +8,8 @@ namespace Domain
 
         public int MovieId { get; set; }
 
-        public List<Genre> Genres { get; set; }
+        public Genre Genre { get; set; }
 
-        public List<Movie> Movies { get; set; }
+        public Movie Movie { get; set; }
     }
 }

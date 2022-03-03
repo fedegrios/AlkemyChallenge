@@ -21,7 +21,12 @@ namespace AlkemyChallenge.Controllers
         {
             try
             {
-                return await characterServices.Get(id);
+                var character = await characterServices.Get(id);
+
+                if (character == null)
+                    return BadRequest(@"No se pudo encontrar el personaje.");
+
+                return Ok(character);
             }
             catch (Exception e)
             {
