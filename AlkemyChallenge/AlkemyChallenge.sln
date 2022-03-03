@@ -3,14 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlkemyChallenge", "AlkemyChallenge.csproj", "{7EC3068C-8AFB-4DE7-8BB1-D44384F06677}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlkemyChallenge", "AlkemyChallenge.csproj", "{7EC3068C-8AFB-4DE7-8BB1-D44384F06677}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "..\Interfaces\Interfaces.csproj", "{FF89DC58-893E-49F0-A3FD-CC7BD59751D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "..\Interfaces\Interfaces.csproj", "{FF89DC58-893E-49F0-A3FD-CC7BD59751D6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AB7D983F-BD17-4D90-8C3F-A724FC1D8BA2}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Services\Services.csproj", "{68BF1663-652C-41B3-878A-BBC909D5DC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{CB86C81B-6259-48D3-BD0A-901E065E6AD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Alkemy.App", "1 Alkemy.App", "{15E63B14-FC59-40F0-BFA6-BEF78BB9B494}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Alkemy.Services", "2 Alkemy.Services", "{CB65FC5F-35AE-4977-8275-9EA0E48D87D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Alkemy.Infraestructure", "3 Alkemy.Infraestructure", "{08B90A19-5F5B-47A8-BA12-F735256462D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure", "..\Infraestructure\Infraestructure.csproj", "{08E71DEE-DE63-4C68-AB3C-E59405282925}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +33,28 @@ Global
 		{FF89DC58-893E-49F0-A3FD-CC7BD59751D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF89DC58-893E-49F0-A3FD-CC7BD59751D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF89DC58-893E-49F0-A3FD-CC7BD59751D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68BF1663-652C-41B3-878A-BBC909D5DC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68BF1663-652C-41B3-878A-BBC909D5DC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68BF1663-652C-41B3-878A-BBC909D5DC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68BF1663-652C-41B3-878A-BBC909D5DC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB86C81B-6259-48D3-BD0A-901E065E6AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB86C81B-6259-48D3-BD0A-901E065E6AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB86C81B-6259-48D3-BD0A-901E065E6AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB86C81B-6259-48D3-BD0A-901E065E6AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08E71DEE-DE63-4C68-AB3C-E59405282925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08E71DEE-DE63-4C68-AB3C-E59405282925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08E71DEE-DE63-4C68-AB3C-E59405282925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08E71DEE-DE63-4C68-AB3C-E59405282925}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EC3068C-8AFB-4DE7-8BB1-D44384F06677} = {15E63B14-FC59-40F0-BFA6-BEF78BB9B494}
+		{FF89DC58-893E-49F0-A3FD-CC7BD59751D6} = {CB65FC5F-35AE-4977-8275-9EA0E48D87D0}
+		{68BF1663-652C-41B3-878A-BBC909D5DC97} = {CB65FC5F-35AE-4977-8275-9EA0E48D87D0}
+		{CB86C81B-6259-48D3-BD0A-901E065E6AD2} = {08B90A19-5F5B-47A8-BA12-F735256462D2}
+		{08E71DEE-DE63-4C68-AB3C-E59405282925} = {08B90A19-5F5B-47A8-BA12-F735256462D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1A00187-4AD8-4B91-AA16-702F21222513}

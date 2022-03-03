@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "/XTwaoFkJitiX0v8C30OabYoEFU20HbV34zqNW+FlRFxmEmwaZLAEFqizAVx2ZW8wDMc6tAwO+OsvgCPWyslSA==",
+  "success": true,
+  "projectFilePath": "D:\\Code\\AlkemyChallenge\\Services\\Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rios_\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.14\\microsoft.aspnetcore.http.features.5.0.14.nupkg.sha512",
+    "C:\\Users\\rios_\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\rios_\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,17 @@
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Infraestructure.deps.json
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Infraestructure.runtimeconfig.json
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Infraestructure.dll
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\ref\Infraestructure.dll
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Infraestructure.pdb
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Domain.dll
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Domain.pdb
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.csproj.AssemblyReference.cache
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.AssemblyInfoInputs.cache
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.AssemblyInfo.cs
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.csproj.CoreCompileInputs.cache
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.csproj.CopyComplete
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.dll
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\ref\Infraestructure.dll
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.pdb
+D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.genruntimeconfig.cache

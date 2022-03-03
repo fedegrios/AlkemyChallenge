@@ -9,10 +9,10 @@ namespace AlkemyChallenge.Controllers
     {
         private readonly ICharacterServices characterServices;
 
-        //public CharacterController(ICharacterServices characterServices)
-        //{
-        //    this.characterServices = characterServices;
-        //}
+        public CharacterController(ICharacterServices characterServices)
+        {
+            this.characterServices = characterServices;
+        }
 
         [HttpGet("{id:int}")]
         public async Task<ActionResult<CharacterDetailDto>> Get(int id)
@@ -41,9 +41,8 @@ namespace AlkemyChallenge.Controllers
                 return BadRequest("Error al intentar listar los personajes.");
             }
         }
-
+        
         [HttpPost]
-        [Route("UpdateImage")]
         public async Task<ActionResult<int>> Post([FromBody] CharacterCreationDto dto)
         {
             try
@@ -58,6 +57,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpPost]
+        [Route("UpdateImage")]
         public async Task<ActionResult<string>> UpdateImage([FromForm] ImageUpdateDto dto)
         {
             try

@@ -1,0 +1,17 @@
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Services.deps.json
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Services.dll
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\ref\Services.dll
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Services.pdb
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Domain.dll
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Interfaces.dll
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Domain.pdb
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Interfaces.pdb
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.dll
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\ref\Services.dll
+D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.pdb

@@ -20,7 +20,7 @@ namespace Interfaces
 
     public class CharacterDetailDto : CharacterCreationDto
     {
-        public List<MovieDto> Movies { get; set; }
+        public MovieDto Movie { get; set; }
     }
 
 }
