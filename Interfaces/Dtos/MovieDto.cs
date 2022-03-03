@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 
 namespace Interfaces
@@ -15,6 +16,8 @@ namespace Interfaces
     public class MovieCreationDto : MovieDto
     {
         public int Score { get; set; }
+
+        public IFormFile Image { get; set; }
 
         public List<int> CharacterIds { get; set; }
 

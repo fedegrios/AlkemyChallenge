@@ -1,4 +1,6 @@
-﻿namespace Interfaces
+﻿using Microsoft.AspNetCore.Http;
+
+namespace Interfaces
 {
     public class CharacterDto : Dto
     {
@@ -7,18 +9,28 @@
         public string ImageUrl { get; set; }
     }
 
-    public class CharacterCreationDto : CharacterDto
+    public class CharacterDetailDto : CharacterDto
     {
         public int Age { get; set; }
 
         public int Weight { get; set; }
 
         public string Story { get; set; }
+
+        public MovieDto Movie { get; set; }
     }
 
-    public class CharacterDetailDto : CharacterCreationDto
+    public class CharacterCreationDto : Dto
     {
-        public MovieDto Movie { get; set; }
+        public string Name { get; set; }
+
+        public int Age { get; set; }
+
+        public int Weight { get; set; }
+
+        public string Story { get; set; }
+
+        public IFormFile Image { get; set; }
     }
 
 }

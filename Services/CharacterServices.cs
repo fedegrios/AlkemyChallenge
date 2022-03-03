@@ -6,6 +6,7 @@ using System.IO;
 using Infraestructure;
 using Interfaces;
 using System;
+using Helpers;
 
 namespace Services
 {
@@ -149,14 +150,15 @@ namespace Services
                 return "";
 
             var storageServices = new LocalStorageServices();
+            var webRootPath = AppConfiguration.WebRootPath;
 
             if (!string.IsNullOrEmpty(character.ImageUrl))
-                await storageServices.Delete(character.ImageUrl, dto.WebRootPath);
+                await storageServices.Delete(character.ImageUrl, webRootPath);
 
-            var destinationFolder = Path.Combine(dto.WebRootPath, "characters");
+            var destinationFolder = Path.Combine(webRootPath, "characters");
             var generatedImageUrl = await storageServices.Save(dto.Image, dto.Extension, destinationFolder);
 
-            character.ImageUrl = generatedImageUrl;
+            character.ImageUrl = Path.Combine("characters", generatedImageUrl);
 
             await dataContext.SaveChangesAsync();
 

@@ -49,11 +49,29 @@ namespace AlkemyChallenge.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<int>> Post([FromBody] MovieCreationDto dto)
+        public async Task<ActionResult<int>> Post([FromForm] MovieCreationDto dto)
         {
             try
             {
-                return await movieServices.Create(dto);
+                var movieId = await movieServices.Create(dto);
+
+                if (dto.Image != null)
+                {
+                    var updateImageDto = new ImageUpdateDto();
+
+                    updateImageDto.Id = movieId;
+                    updateImageDto.Extension = Path.GetExtension(dto.Image.FileName);
+
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await dto.Image.CopyToAsync(memoryStream);
+                        updateImageDto.Image = memoryStream.ToArray();
+                    }
+
+                    await movieServices.UpdateImage(updateImageDto);
+                }
+
+                return Ok(movieId);
             }
             catch (Exception e)
             {

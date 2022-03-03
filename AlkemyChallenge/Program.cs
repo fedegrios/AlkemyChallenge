@@ -3,9 +3,7 @@ using AlkemyChallenge;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var startup = new Startup(builder.Configuration, builder.Services);
-
-startup.ConfigDataBaseConnection();
+var startup = new Startup(builder.Configuration, builder.Services, builder.Environment);
 
 // Add services to the container.
 

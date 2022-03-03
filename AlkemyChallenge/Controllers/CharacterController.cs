@@ -50,46 +50,34 @@ namespace AlkemyChallenge.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<int>> Post([FromBody] CharacterCreationDto dto)
+        public async Task<ActionResult<int>> Post([FromForm] CharacterCreationDto dto)
         {
             try
             {
-                return await characterServices.Create(dto);
+                var characterId = await characterServices.Create(dto);
+
+                if (dto.Image != null)
+                {
+                    var updateImageDto = new ImageUpdateDto();
+
+                    updateImageDto.Id = characterId;
+                    updateImageDto.Extension = Path.GetExtension(dto.Image.FileName);
+
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await dto.Image.CopyToAsync(memoryStream);
+                        updateImageDto.Image = memoryStream.ToArray();
+                    }
+
+                    await characterServices.UpdateImage(updateImageDto);
+                }
+
+                return Ok(characterId);
             }
             catch (Exception e)
             {
                 Console.WriteLine($@"CharacterController.Post: {e.Message}");
                 return BadRequest("Error al intentar crear el personaje.");
-            }
-        }
-
-        [HttpPost]
-        [Route("UpdateImage")]
-        public async Task<ActionResult<string>> UpdateImage([FromForm] IFormFile file, int id)
-        {
-            try
-            {
-                var updateImageDto = new ImageUpdateDto();
-
-                updateImageDto.Id = id;
-                updateImageDto.Extension = Path.GetExtension(file.FileName);
-                updateImageDto.WebRootPath = env.WebRootPath;
-
-                if (file != null)
-                { 
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        await file.CopyToAsync(memoryStream);
-                        updateImageDto.Image = memoryStream.ToArray();
-                    }
-                }
-
-                return await characterServices.UpdateImage(updateImageDto);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($@"CharacterController.UpdateImage: {e.Message}");
-                return BadRequest("Error al intentar actualizar la imagen.");
             }
         }
 

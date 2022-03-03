@@ -14,5 +14,7 @@ namespace Interfaces
         Task<bool> Update(MovieCreationDto dto);
 
         Task<bool> Delete(int id);
+
+        Task<string> UpdateImage(ImageUpdateDto updateImageDto);
     }
 }

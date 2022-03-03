@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GKy1OH3zI5JzAJ+7JAKfUPz7tYUoyNdjFI4DnBIF190=",
+  "Hash": "kJjgJwZpBB9c9oBWHZsBquxN8EebJ+I6z3zNF6Jf8eQ=",
   "Source": "AlkemyChallenge",
   "BasePath": "_content/AlkemyChallenge",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\Code\\AlkemyChallenge\\AlkemyChallenge\\wwwroot\\characters\\89db4645-7052-4e60-ad26-a7c5de2cd2db.png",
+      "SourceId": "AlkemyChallenge",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\AlkemyChallenge\\AlkemyChallenge\\wwwroot\\",
+      "BasePath": "_content/AlkemyChallenge",
+      "RelativePath": "characters/89db4645-7052-4e60-ad26-a7c5de2cd2db.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\characters\\89db4645-7052-4e60-ad26-a7c5de2cd2db.png"
+    }
+  ]
 }

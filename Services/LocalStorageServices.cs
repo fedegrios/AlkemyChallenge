@@ -16,7 +16,7 @@ namespace Services
 
             await File.WriteAllBytesAsync(Path.Combine(webRootPath, fileName), data);
 
-            return Path.Combine(webRootPath, fileName).Replace("\\","/");
+            return fileName.Replace("\\","/");
         }
 
         public async Task<bool> Delete(string path, string webRootPath)

@@ -8,7 +8,6 @@ namespace Infraestructure
     {
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            //builder.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=AlkemyChallenge;Integrated Security=True");
             builder.UseSqlServer(AppConfiguration.ConnectionString);
 
             base.OnConfiguring(builder);

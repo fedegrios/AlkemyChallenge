@@ -7,18 +7,14 @@ namespace AlkemyChallenge
 {
     public class Startup
     {
-        private readonly IConfiguration config;
         private readonly IServiceCollection services;
 
-        public Startup(IConfiguration config, IServiceCollection services)
+        public Startup(IConfiguration config, IServiceCollection services, IWebHostEnvironment env)
         {
-            this.config = config;
             this.services = services;
-        }
 
-        public void ConfigDataBaseConnection()
-        {
             AppConfiguration.ConnectionString = config.GetConnectionString("DefaultConnection");
+            AppConfiguration.WebRootPath = env.WebRootPath;
         }
 
         public void ConfigIoC()

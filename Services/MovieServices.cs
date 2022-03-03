@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Infraestructure;
 using Interfaces;
+using Helpers;
+using System.IO;
 
 namespace Services
 {
@@ -171,5 +173,27 @@ namespace Services
             }
         }
 
+        public async Task<string> UpdateImage(ImageUpdateDto dto)
+        {
+            var movie = await dataContext.Movies.FirstOrDefaultAsync(x => x.Id == dto.Id);
+
+            if (movie == null)
+                return "";
+
+            var storageServices = new LocalStorageServices();
+            var webRootPath = AppConfiguration.WebRootPath;
+
+            if (!string.IsNullOrEmpty(movie.ImageUrl))
+                await storageServices.Delete(movie.ImageUrl, webRootPath);
+
+            var destinationFolder = Path.Combine(webRootPath, "movies");
+            var generatedImageUrl = await storageServices.Save(dto.Image, dto.Extension, destinationFolder);
+
+            movie.ImageUrl = Path.Combine("movies", generatedImageUrl);
+
+            await dataContext.SaveChangesAsync();
+
+            return generatedImageUrl;
+        }
     }
 }
