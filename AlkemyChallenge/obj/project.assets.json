@@ -732,11 +732,22 @@
           "bin/placeholder/Domain.dll": {}
         }
       },
+      "Helpers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Helpers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Helpers.dll": {}
+        }
+      },
       "Infraestructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Domain": "1.0.0",
+          "Helpers": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.2"
         },
         "compile": {
@@ -2171,6 +2182,11 @@
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
     },
+    "Helpers/1.0.0": {
+      "type": "project",
+      "path": "../Helpers/Helpers.csproj",
+      "msbuildProject": "../Helpers/Helpers.csproj"
+    },
     "Infraestructure/1.0.0": {
       "type": "project",
       "path": "../Infraestructure/Infraestructure.csproj",
@@ -2189,6 +2205,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Helpers >= 1.0.0",
       "Infraestructure >= 1.0.0",
       "Interfaces >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
@@ -2229,6 +2246,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Code\\AlkemyChallenge\\Helpers\\Helpers.csproj": {
+              "projectPath": "D:\\Code\\AlkemyChallenge\\Helpers\\Helpers.csproj"
+            },
             "D:\\Code\\AlkemyChallenge\\Infraestructure\\Infraestructure.csproj": {
               "projectPath": "D:\\Code\\AlkemyChallenge\\Infraestructure\\Infraestructure.csproj"
             },

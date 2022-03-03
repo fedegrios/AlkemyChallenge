@@ -15,3 +15,5 @@ D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.dll
 D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\ref\Infraestructure.dll
 D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.pdb
 D:\Code\AlkemyChallenge\Infraestructure\obj\Debug\net6.0\Infraestructure.genruntimeconfig.cache
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Helpers.dll
+D:\Code\AlkemyChallenge\Infraestructure\bin\Debug\net6.0\Helpers.pdb

@@ -1,0 +1,12 @@
+D:\Code\AlkemyChallenge\Helpers\bin\Debug\net6.0\Helpers.deps.json
+D:\Code\AlkemyChallenge\Helpers\bin\Debug\net6.0\Helpers.dll
+D:\Code\AlkemyChallenge\Helpers\bin\Debug\net6.0\ref\Helpers.dll
+D:\Code\AlkemyChallenge\Helpers\bin\Debug\net6.0\Helpers.pdb
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.csproj.AssemblyReference.cache
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.AssemblyInfoInputs.cache
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.AssemblyInfo.cs
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.csproj.CoreCompileInputs.cache
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.dll
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\ref\Helpers.dll
+D:\Code\AlkemyChallenge\Helpers\obj\Debug\net6.0\Helpers.pdb

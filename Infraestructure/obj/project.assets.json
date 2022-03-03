@@ -641,6 +641,16 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Helpers/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Helpers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Helpers.dll": {}
+        }
       }
     }
   },
@@ -1865,11 +1875,17 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Helpers/1.0.0": {
+      "type": "project",
+      "path": "../Helpers/Helpers.csproj",
+      "msbuildProject": "../Helpers/Helpers.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Domain >= 1.0.0",
+      "Helpers >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2"
@@ -1909,6 +1925,9 @@
           "projectReferences": {
             "D:\\Code\\AlkemyChallenge\\Domain\\Domain.csproj": {
               "projectPath": "D:\\Code\\AlkemyChallenge\\Domain\\Domain.csproj"
+            },
+            "D:\\Code\\AlkemyChallenge\\Helpers\\Helpers.csproj": {
+              "projectPath": "D:\\Code\\AlkemyChallenge\\Helpers\\Helpers.csproj"
             }
           }
         }

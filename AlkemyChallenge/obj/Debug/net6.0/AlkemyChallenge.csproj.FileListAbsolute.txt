@@ -69,3 +69,5 @@ D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\AlkemyChallenge.staticw
 D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Services.dll
 D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Services.pdb
 D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Helpers.dll
+D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Helpers.pdb

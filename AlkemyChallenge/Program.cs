@@ -3,14 +3,16 @@ using AlkemyChallenge;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var startup = new Startup();
+var startup = new Startup(builder.Configuration, builder.Services);
+
+startup.ConfigDataBaseConnection();
 
 // Add services to the container.
 
 builder.Services.AddControllers()
     .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-startup.ConfigIoC(builder.Services);
+startup.ConfigIoC();
 
 builder.Services.AddHttpContextAccessor();
 

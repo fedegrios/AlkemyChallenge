@@ -17,3 +17,5 @@ D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\ref\Services.dll
 D:\Code\AlkemyChallenge\Services\obj\Debug\net6.0\Services.pdb
 D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Infraestructure.dll
 D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Infraestructure.pdb
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Helpers.dll
+D:\Code\AlkemyChallenge\Services\bin\Debug\net6.0\Helpers.pdb

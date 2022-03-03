@@ -9,6 +9,7 @@
       "Infraestructure/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Helpers": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.2"
@@ -488,6 +489,11 @@
         "runtime": {
           "Domain.dll": {}
         }
+      },
+      "Helpers/1.0.0": {
+        "runtime": {
+          "Helpers.dll": {}
+        }
       }
     }
   },
@@ -799,6 +805,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Helpers/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

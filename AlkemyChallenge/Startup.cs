@@ -1,4 +1,5 @@
-﻿using Infraestructure;
+﻿using Helpers;
+using Infraestructure;
 using Interfaces;
 using Services;
 
@@ -6,7 +7,21 @@ namespace AlkemyChallenge
 {
     public class Startup
     {
-        public void ConfigIoC(IServiceCollection services)
+        private readonly IConfiguration config;
+        private readonly IServiceCollection services;
+
+        public Startup(IConfiguration config, IServiceCollection services)
+        {
+            this.config = config;
+            this.services = services;
+        }
+
+        public void ConfigDataBaseConnection()
+        {
+            AppConfiguration.ConnectionString = config.GetConnectionString("DefaultConnection");
+        }
+
+        public void ConfigIoC()
         {
             services.AddSingleton<DataContext>();
 
