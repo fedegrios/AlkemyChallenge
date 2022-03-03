@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "9k3RDuwVKy4ooLpj+lA3qgOOv4oqrrPL8+KOCCDmSik=",
+  "Hash": "GKy1OH3zI5JzAJ+7JAKfUPz7tYUoyNdjFI4DnBIF190=",
   "Source": "AlkemyChallenge",
   "BasePath": "_content/AlkemyChallenge",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AlkemyChallenge\\wwwroot",
+      "Source": "AlkemyChallenge",
+      "ContentRoot": "D:\\Code\\AlkemyChallenge\\AlkemyChallenge\\wwwroot\\",
+      "BasePath": "_content/AlkemyChallenge",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

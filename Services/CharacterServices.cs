@@ -5,6 +5,7 @@ using System.Linq;
 using System.IO;
 using Infraestructure;
 using Interfaces;
+using System;
 
 namespace Services
 {
@@ -19,19 +20,27 @@ namespace Services
 
         public async Task<int> Create(CharacterCreationDto dto)
         {
-            var id = dataContext.Characters.Any()
-                ? dataContext.Characters.Max(x => x.Id) +1
-                : 1;
+            try
+            {
+                var id = dataContext.Characters.Any()
+                    ? dataContext.Characters.Max(x => x.Id) +1
+                    : 1;
 
-            var newCharacter = dto.MapToCharacter();
+                var newCharacter = dto.MapToCharacter();
 
-            newCharacter.Id = id;
+                //newCharacter.Id = id;
 
-            dataContext.Characters.Add(newCharacter);
+                dataContext.Characters.Add(newCharacter);
 
-            await dataContext.SaveChangesAsync();
+                await dataContext.SaveChangesAsync();
 
-            return newCharacter.Id;
+                return newCharacter.Id;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($@"CharacterServices.Create: {e.Message}");
+                throw;
+            }
         }
 
         public async Task<bool> Delete(int id)
@@ -68,25 +77,33 @@ namespace Services
 
         public async Task<List<CharacterDto>> List(string name, int age, int movieId)
         {
-            var lstCharacters = await dataContext.Characters
-                .Include(x => x.CharacterMovies)
-                .AsNoTracking()
-                .Where(x => x.Name.Contains(name))
-                .ToListAsync();
+            try
+            {
+                var lstCharacters = await dataContext.Characters
+                    .Include(x => x.CharacterMovies)
+                    .AsNoTracking()
+                    .Where(x => !x.Deleted && x.Name.Contains(name))
+                    .ToListAsync();
 
-            if (age > 0)
-                lstCharacters = lstCharacters
-                    .Where(x => x.Age == age)
+                if (age > 0)
+                    lstCharacters = lstCharacters
+                        .Where(x => x.Age == age)
+                        .ToList();
+
+                if (movieId > 0)
+                    lstCharacters = lstCharacters
+                        .Where(x => x.CharacterMovies.Any(cm => cm.MovieId == movieId))
+                        .ToList();
+
+                return lstCharacters
+                    .Select(x => x.MapToCharacterDto())
                     .ToList();
-
-            if (movieId > 0)
-                lstCharacters = lstCharacters
-                    .Where(x => x.CharacterMovies.Any(cm => cm.MovieId == movieId))
-                    .ToList();
-
-            return lstCharacters
-                .Select(x => x.MapToCharacterDto())
-                .ToList();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($@"CharacterServices.List: {e.Message}");
+                throw;
+            }
         }
 
         public async Task<bool> Update(CharacterCreationDto dto)
@@ -120,6 +137,10 @@ namespace Services
 
             var destinationFolder = Path.Combine(dto.WebRootPath, "characters");
             var generatedImageUrl = await storageServices.Save(dto.Image, dto.Extension, destinationFolder);
+
+            character.ImageUrl = generatedImageUrl;
+
+            await dataContext.SaveChangesAsync();
 
             return generatedImageUrl;
         }

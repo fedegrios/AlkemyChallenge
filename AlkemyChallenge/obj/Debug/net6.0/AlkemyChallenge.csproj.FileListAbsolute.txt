@@ -65,3 +65,6 @@ D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Domain.dll
 D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Infraestructure.dll
 D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Infraestructure.pdb
 D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Domain.pdb
+D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\AlkemyChallenge.staticwebassets.runtime.json
+D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Services.dll
+D:\Code\AlkemyChallenge\AlkemyChallenge\bin\Debug\net6.0\Services.pdb

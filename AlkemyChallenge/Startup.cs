@@ -11,6 +11,7 @@ namespace AlkemyChallenge
             services.AddSingleton<DataContext>();
 
             services.AddTransient<IStorageServices, LocalStorageServices>();
+            services.AddTransient<ICharacterServices, CharacterServices>();
 
         }
     }

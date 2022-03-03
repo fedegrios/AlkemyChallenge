@@ -58,7 +58,7 @@ namespace AlkemyChallenge.Controllers
             }
         }
 
-        [HttpPost("{id:int}")]
+        [HttpPost]
         [Route("UpdateImage")]
         public async Task<ActionResult<string>> UpdateImage([FromForm] IFormFile file, int id)
         {
