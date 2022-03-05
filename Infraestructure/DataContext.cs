@@ -1,10 +1,11 @@
 ﻿using Domain;
 using Helpers;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {

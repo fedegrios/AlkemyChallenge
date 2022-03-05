@@ -12,6 +12,8 @@ builder.Services.AddControllers()
 
 startup.ConfigIoC();
 
+startup.ConfigServices();
+
 builder.Services.AddHttpContextAccessor();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -30,8 +32,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-
-app.UseAuthorization();
 
 app.MapControllers();
 
