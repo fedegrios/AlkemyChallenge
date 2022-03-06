@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Interfaces;
 
 namespace AlkemyChallenge.Controllers
@@ -8,12 +10,10 @@ namespace AlkemyChallenge.Controllers
     public class CharacterController : Controller
     {
         private readonly ICharacterServices characterServices;
-        private readonly IWebHostEnvironment env;
 
-        public CharacterController(ICharacterServices characterServices, IWebHostEnvironment env)
+        public CharacterController(ICharacterServices characterServices)
         {
             this.characterServices = characterServices;
-            this.env = env;
         }
 
         [HttpGet("{id:int}")]
@@ -36,6 +36,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<List<CharacterDto>>> List(string name ="", int age =0, int movieId =0)
         {
             try
