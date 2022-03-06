@@ -1,7 +1,7 @@
-﻿using Domain;
-using Helpers;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Domain;
+using Helpers;
 
 namespace Infraestructure
 {

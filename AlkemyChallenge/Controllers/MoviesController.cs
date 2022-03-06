@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Interfaces;
 
 namespace AlkemyChallenge.Controllers
 {
     [ApiController]
     [Route("movies")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class MoviesController : ControllerBase
     {
         private readonly IMovieServices movieServices;
@@ -15,6 +18,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<MovieDto>>> List(string name ="", int genre =0, string order ="")
         {
             try
@@ -29,6 +33,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [AllowAnonymous]
         public async Task<ActionResult<MovieDetailDto>> Get(int id)
         {
             try
@@ -46,7 +51,6 @@ namespace AlkemyChallenge.Controllers
                 return BadRequest("No se pudo obtener la película/serie");
             }
         }
-
 
         [HttpPost]
         public async Task<ActionResult<int>> Post([FromForm] MovieCreationDto dto)

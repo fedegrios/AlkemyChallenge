@@ -7,6 +7,7 @@ namespace AlkemyChallenge.Controllers
 {
     [ApiController]
     [Route("characters")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CharacterController : Controller
     {
         private readonly ICharacterServices characterServices;
@@ -17,6 +18,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [AllowAnonymous]
         public async Task<ActionResult<CharacterDetailDto>> Get(int id)
         {
             try
@@ -36,7 +38,7 @@ namespace AlkemyChallenge.Controllers
         }
 
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [AllowAnonymous]
         public async Task<ActionResult<List<CharacterDto>>> List(string name ="", int age =0, int movieId =0)
         {
             try
