@@ -320,6 +320,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.25.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

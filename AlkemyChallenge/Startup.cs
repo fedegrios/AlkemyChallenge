@@ -20,7 +20,9 @@ namespace AlkemyChallenge
             this.config = config;
             this.services = services;
             this.env = env;
+
             AppConfiguration.ConnectionString = config.GetConnectionString("DefaultConnection");
+            AppConfiguration.MailServicesKey = config.GetValue<string>("MailServicesKey");
             AppConfiguration.WebRootPath = env.WebRootPath;
 
         }
@@ -51,10 +53,12 @@ namespace AlkemyChallenge
         {
             services.AddSingleton<DataContext>();
 
+
             services.AddTransient<IStorageServices, LocalStorageServices>();
             services.AddTransient<ICharacterServices, CharacterServices>();
             services.AddTransient<IMovieServices, MovieServices>();
 
+            services.AddScoped<INotificationServices, NotificationServices>();
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using Helpers;
-using Interfaces;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Helpers;
+using Interfaces;
 
 namespace AlkemyChallenge.Controllers
 {
@@ -16,12 +16,18 @@ namespace AlkemyChallenge.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly IConfiguration configuration;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly INotificationServices notificationServices;
 
-        public AuthorizationController(UserManager<IdentityUser> userManager, IConfiguration configuration, SignInManager<IdentityUser> signInManager)
+        public AuthorizationController(
+            UserManager<IdentityUser> userManager, 
+            IConfiguration configuration, 
+            SignInManager<IdentityUser> signInManager,
+            INotificationServices notificationServices)
         {
             this.userManager = userManager;
             this.configuration = configuration;
             this.signInManager = signInManager;
+            this.notificationServices = notificationServices;
         }
 
         [HttpPost]
@@ -49,7 +55,6 @@ namespace AlkemyChallenge.Controllers
             }
         }
 
-
         [HttpPost]
         [Route("register")]
         public async Task<ActionResult<AuthenticationResult>> Register(UserCredential userCredential)
@@ -65,6 +70,8 @@ namespace AlkemyChallenge.Controllers
 
                 if (!result.Succeeded)
                     return BadRequest(result.Errors);
+
+                await notificationServices.SendNewUserCreation(user.UserName, user.Email);
 
                 return BuildAuthenticationResult(userCredential);
             }
